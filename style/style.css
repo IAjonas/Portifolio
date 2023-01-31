@@ -27,7 +27,7 @@
     justify-content: center;
     display: flex;
     top: 0px;
-    right: 5px;
+    right: 0px;
 }
 .indicador1
 {
@@ -72,7 +72,7 @@
     width: 20px;
     height: 10px;    
     bottom: 50%;
-    right: 23px;
+    right: 18px;
 
     position: absolute;    
     display: flex;
