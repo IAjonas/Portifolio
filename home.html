@@ -7,8 +7,11 @@
     <title>Portifolio</title>
 
     <link rel="stylesheet" href="style/style.css">
+    <script src="j.js"></script>
 </head>
-<body>
+<body>   
+
+
     <div class="conteudo">
     <span class="txt">
         <h1> Hi, I'm Jonas.</h1>
@@ -34,11 +37,25 @@
             </li>
         </ul>
 
+    </div> 
+   <div class="tocador">
+         <div class="black"></div>
     </div>
-    <div class="fundo">
-        <img src="img/eu vermelho.jpg" alt="eu-bob">
+    <div class="fundo"> 
+        
+        
+       <input type="checkbox" id="chec">
+       
+        <label for="chec" class="label" id="eu-foto" >
+            <section class="player">            
+                <img id="eu-foto" src="img/eu vermelho.jpg" alt="eu-bob">
+            
+            
+            </section>
+       </label>
+    </div>
 
-    </div>
+
     <DIV class="menu">
         <ul>
             <div class="indicador1"></div>
@@ -49,42 +66,141 @@
         <ul>
             <li class="list" >
                 <a href="file:///C:/Users/Admin/Desktop/projet/Portifolio/ilumina%C3%A7%C3%A3o/ilumina%C3%A7%C3%A3o.html">
-                    <span class="icon"><img src="img/luz.png"  title="iluminação">
+                    <span class="icon"><img  src="img/luz.png"  title="iluminação">
                 </a></span>
                 
             </li>
             <li class="list" >
                 <a href="#">
-                    <span class="icon"><img src="img/fale comigo.png"  title="fale comigo">
+                    <span class="icon"><img  src="img/fale comigo.png"  title="fale comigo">
                 </a></span>
                 
             </li>
             <li class="list" >
                 <a href="#">
-                    <span class="icon"><img src="img/menu project.png" title="menu de projetos">
+                    <span class="icon"><img  src="img/menu project.png" title="menu de projetos">
                 </a></span>
                 
             </li>
         </ul>
 
     </div>
-    <div class="tocador">
-        <div class="black">
-            <section class="player">
-                <img src="img/play.png" alt="play">
-            </section>
-        </div>
-    </div>
-    <div class="box">
 
-        <audio controls>
-            <source  src="audios/Beethoven - Moonlight Sonata (FULL) (128 kbps).mp3" type="audio/mpeg">
-        </audio>
+
+    <div id="radio">
+        
+        <button id="botao" >
+
+            <img src="img/disco icon.png" alt="">
+
+        </button>
+        
+        <div id="menu-interativo">
+            
+            <ul id="lista">
+                <li id="ajudali">
+                    <img  id="ajuda" src="img/ajuda.png" alt="ajuda">
+                        <div id="dialog">
+                            <span>
+                                   <p>Olá! como posso ajudar;  </p>
+                                   <input type="text">   
+                            </span>
+                        </div>
+                </li >
+                <li id="walkmanli">
+                   <img id="walkman" src="img/play walkman.png" alt="walkman">
+                        <div id="walkman1">
+                            <img id="mestre" src="img/Ludwig-van-Beethoven.jpg" alt="TheMestre">
+                                <div id="Descrição">
+                                    <h2>nome da musica</h2>
+                                    <i>Beethoven</i>
+                                </div> 
+                                
+                                <div id="duração">
+                                    <div id="barra">
+                                        <progress value="0.5" max="1" ></progress>
+                                        <div id="ponto"></div>
+                                    </div>
+                                    <div id="tempo">
+                                        <p id="inicio">0:00</p>
+                                        <p id="fim">3:40</p>
+                                    </div>
+                                </div>
+                                <div id="dandomusica">
+                                    <img id="fas fa-step-backward" src="img/seta-pequena-esquerda.svg" alt="">
+                                    <img id="fas fa-play-white" src="img/play.png" alt="">
+                                    <img id="fas fa-pause-white" src="img/pausa.svg" alt="">
+                                    <img id="fas fa-step-forward" src="img/seta-pequena-direita.svg" alt="">
+
+                                </div>
+                                <audio src="audios/Beethoven - Moonlight Sonata (FULL) (128 kbps).mp3"></audio>
+
+                        </div>
+                </li>
+            </ul>
+
+
+        </div>
+            
+
+    </div>
+
+
+        
+    <script>
+        const button = document.getElementById("botao");
+        const list = document.getElementById("menu-interativo");
         
 
-    </div>
-    
 
-    </p>
+            list.style.display = "none";
+
+            button.addEventListener("click",(event)=>{
+                if (list.style.display == "none"){
+                    list.style.display = "block";
+                } else {
+                    list.style.display = "none";
+                }
+            });
+        
+        const subtn = document.getElementById("ajuda");
+        const item1 = document.getElementById("dialog")
+
+            item1.style.display = "none";
+
+            subtn.addEventListener("click",(event)=>{
+                if (item1.style.display == "none") {
+                    item1.style.display = "block";
+                } else {
+                    item1.style.display = "none";
+                }
+            });
+
+            
+        const subt = document.getElementById("walkman");
+        const item2 = document.getElementById("walkman1")
+
+            item2.style.display = "none";
+
+            subt.addEventListener("click",(event)=>{
+                if (item2.style.display == "none") {
+                    item2.style.display = "flex";
+                } else {
+                    item2.style.display = "none";
+                }
+            }); 
+            
+
+
+
+
+
+
+    </script>
+
+       
+      
+        
+    
 </body>
 </html>
