@@ -162,33 +162,30 @@
                     list.style.display = "none";
                 }
             });
-        
-        const subtn = document.getElementById("ajuda");
-        const item1 = document.getElementById("dialog")
-
-            item1.style.display = "none";
-
-            subtn.addEventListener("click",(event)=>{
-                if (item1.style.display == "none") {
-                    item1.style.display = "block";
-                } else {
-                    item1.style.display = "none";
-                }
-            });
-
             
-        const subt = document.getElementById("walkman");
-        const item2 = document.getElementById("walkman1")
+            function toggleDialog(subtnId, dialogId, otherDialogId) {
+            const subtn = document.getElementById(subtnId);
+            const dialog = document.getElementById(dialogId);
+            const otherDialog = document.getElementById(otherDialogId);
 
-            item2.style.display = "none";
+                dialog.style.display = "none";
 
-            subt.addEventListener("click",(event)=>{
-                if (item2.style.display == "none") {
-                    item2.style.display = "flex";
-                } else {
-                    item2.style.display = "none";
-                }
-            }); 
+            subtn.addEventListener("click", (event) => {
+             if (dialog.style.display == "none") {
+            dialog.style.display = "block";
+            if (otherDialog.style.display == "block") {
+             otherDialog.style.display = "none";
+             }
+            } else {
+             dialog.style.display = "none";
+             }
+            });
+            }
+// chame a função com os IDs específicos para cada caixa de diálogo
+                toggleDialog("ajuda", "dialog", "walkman1");
+                toggleDialog("walkman", "walkman1", "dialog");
+
+
             
 
 
