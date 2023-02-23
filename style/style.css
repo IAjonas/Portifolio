@@ -417,70 +417,83 @@
     background-color: var(--cor-menu);
 }
 #walkman1{
-    
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
-    
     background-color: blue;
     left: 55px;
     bottom: -76px;
     position: absolute;
     border-radius: 10%;
-    
     width: 300px;
     height: 200px;
+}
+#caixa-walkman{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10%;
+    width: 300px;
+    height: 100%;
 }
 
 
 #walkman1 #mestre{
-    
-    position: absolute;
+    margin-top: 5px;
     display: flex;
-    width: 68px;
     height: 65px;
-    justify-content: center;
-    flex-wrap: nowrap;
+    
    
 }#Descrição{
-    width: 10px;
+    height: 65px;
+    font-size: 12px;
     display: flex;
     background-color: transparent;
-    flex-direction: column-reverse;
     align-items: center;
+    flex-direction: column-reverse;
 }
-#descrição h2, i{
-    font-size: 10px;
+#Descrição h2, i{
+    margin: 5px 0px 5px;    
 }
 #duração{
     
     display: flex;
-    width: 220px;
-    height: 102px;
-    justify-content: center;
+    align-items: center;
+
 }
-#duração #barra{    
-    top: 1px;
-    position: relative;
-    display: flex;
-    width: 142px;
-    height: 19px;
-    border-radius: 50%;
-}
-#duração #tempo{
-  
-    position: absolute;
-    height: 24px;
-    width: 220px;
+#barra{    
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-    top: 117px;
+    
+
+    width: 225px;
+    border: 1px solid whitesmoke;
+    height: 9px;
+    border-radius: 5px;
+}
+progress{
+    background-color:var(--cor-fundo);
+    height: 6px;
+    width: 50%;
     
 }
-#tempo p{
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
+#ponto{
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;    
+    background-color: white;
+}
+#tempo{
+    font-size: 11px;
+    position: absolute;
+    width: 225px;
+    display: flex;
+    justify-content: SPACE-BETWEEN;
+    top: 136px;
+    background-color: transparent;
+    
+}
+.botao-play{
+    font-size: 300px;
 }
 #dandomusica{
     width: 50px;
