@@ -7,9 +7,11 @@
     <title>Portifolio</title>
 
     <link rel="stylesheet" href="style/style.css">
-    <script src="j.js"></script>
+    
 </head>
 <body>   
+    <script src="script/j.js"></script>
+
 
 
     <div class="conteudo">
@@ -128,13 +130,14 @@
                                     </div>
                                 </div>
                                 <div id="dandomusica">
-                                    <img class="fas fa-step-backward setas" src="img/seta-pequena-esquerda.svg" alt=""></i>
-                                    <img class="fas fa-play-white botao-play" src="img/play.png" alt=""></i>
-                                    <img class="fas fa-pause-white botao-pause" src="img/pausa.svg" alt=""></i>
-                                    <img class="fas fa-step-forward setas" src="img/seta-pequena-direita.svg" alt=""></i>
+                                    <img class="fas fa-step-backward setas" src="img/seta-pequena-esquerda.svg" alt="">
+                                    <img class="fas fa-play-white botao-play" src="img/play.png" alt="">
+                                    <img class="fas fa-pause-white botao-pause" src="img/pausa.svg" alt="">
+                                    <img class="fas fa-step-forward setas" src="img/seta-pequena-direita.svg" alt="">
 
                                 </div>
                                 <audio src="audios/Beethoven - Moonlight Sonata (FULL) (128 kbps).mp3"></audio>
+                                
 
                             </div>
                             
@@ -148,56 +151,60 @@
             
 
     </div>
-
-
-        
     <script>
         const button = document.getElementById("botao");
         const list = document.getElementById("menu-interativo");
-        
 
 
+
+    list.style.display = "none";
+
+    button.addEventListener("click",(event)=>{
+        if (list.style.display == "none"){
+            list.style.display = "block";
+        } else {
             list.style.display = "none";
+        }
+    });
+    
+    function toggleDialog(subtnId, dialogId, otherDialogId) {
+    const subtn = document.getElementById(subtnId);
+    const dialog = document.getElementById(dialogId);
+    const otherDialog = document.getElementById(otherDialogId);
 
-            button.addEventListener("click",(event)=>{
-                if (list.style.display == "none"){
-                    list.style.display = "block";
-                } else {
-                    list.style.display = "none";
-                }
-            });
-            
-            function toggleDialog(subtnId, dialogId, otherDialogId) {
-            const subtn = document.getElementById(subtnId);
-            const dialog = document.getElementById(dialogId);
-            const otherDialog = document.getElementById(otherDialogId);
+        dialog.style.display = "none";
 
-                dialog.style.display = "none";
-
-            subtn.addEventListener("click", (event) => {
-             if (dialog.style.display == "none") {
-            dialog.style.display = "block";
-            if (otherDialog.style.display == "block") {
-             otherDialog.style.display = "none";
-             }
-            } else {
-             dialog.style.display = "none";
-             }
-            });
-            }
+    subtn.addEventListener("click", (event) => {
+     if (dialog.style.display == "none") {
+    dialog.style.display = "block";
+    if (otherDialog.style.display == "block") {
+     otherDialog.style.display = "none";
+     }
+    } else {
+     dialog.style.display = "none";
+     }
+    });
+    }
 // chame a função com os IDs específicos para cada caixa de diálogo
-                toggleDialog("ajuda", "dialog", "walkman1");
-                toggleDialog("walkman", "walkman1", "dialog");
-
-
-            
+        toggleDialog("ajuda", "dialog", "walkman1");
+        toggleDialog("walkman", "walkman1", "dialog");
 
 
 
 
+
+
+
+
+
+
+
+    
 
 
     </script>
+        
+    
 
        
       
