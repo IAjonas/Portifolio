@@ -10,7 +10,7 @@
     
 </head>
 <body>   
-    <script src="script/j.js"></script>
+    
 
 
 
@@ -126,17 +126,17 @@
                                     </div>
                                     <div id="tempo">
                                         <p id="inicio">0:00</p>
-                                        <p id="fim">3:40</p>
+                                        <p id="fim">20:40</p>
                                     </div>
                                 </div>
                                 <div id="dandomusica">
-                                    <img class="fas fa-step-backward setas" src="img/seta-pequena-esquerda.svg" alt="">
+                                    <img class="fas fa-step-backward setas anterior" src="img/seta-pequena-esquerda.svg" alt="">
                                     <img class="fas fa-play-white botao-play" src="img/play.png" alt="">
                                     <img class="fas fa-pause-white botao-pause" src="img/pausa.svg" alt="">
-                                    <img class="fas fa-step-forward setas" src="img/seta-pequena-direita.svg" alt="">
+                                    <img class="fas fa-step-forward setas proxima" src="img/seta-pequena-direita.svg" alt="">
 
                                 </div>
-                                <audio src="audios/Beethoven - Moonlight Sonata (FULL) (128 kbps).mp3"></audio>
+                                <audio id="audio1" src="audios/Beethoven - Moonlight Sonata (FULL) (128 kbps).mp3"></audio>
                                 
 
                             </div>
@@ -152,6 +152,7 @@
 
     </div>
     <script>
+//script do menu interativo 
         const button = document.getElementById("botao");
         const list = document.getElementById("menu-interativo");
 
@@ -189,8 +190,108 @@
         toggleDialog("ajuda", "dialog", "walkman1");
         toggleDialog("walkman", "walkman1", "dialog");
 
+//script da musica 
+        let musicas = [
+            {titulo:'Moonlight Sonata', artista:'Beethoven', src:'audios/Beethoven - Moonlight Sonata (FULL) (128 kbps).mp3', img:'img/Ludwig-van-Beethoven.jpg'},
+            {titulo:'Violin Concerto in A Minor', artista:'Joshua Bell', src:'audios/Violin Concerto in A Minor, BWV 1041_ I. Allegro (320 kbps).mp3', img:'img/allegro.jpg'},
+            {titulo:'Revolutionary Etude', artista:'Chopin', src:'audios/Chopin - Revolutionary Etude (Op. 10 No. 12) (320 kbps).mp3', img:'img/Chopin.jpg'}
+        ];
+
+       let indexMuscia = 0;
+       
+        let inputCheck = document.getElementById('chec');
+
+        const musica = document.querySelector('#audio1');
+        const duracaoMusica = document.querySelector('#fim');
+        const imagem = document.querySelector('#mestre');
+        const nomeMusica = document.querySelector('#Descrição h2');
+        const nomeArtista = document.querySelector('#Descrição i');
+
+        let botaoPlay = document.querySelector('.botao-play');
+        let botaoPause = document.querySelector('.botao-pause');
+
+        
 
 
+
+        renderizarMusica(indexMuscia);
+
+
+
+        duracaoMusica.textContent = segundosParaMinutos(Math.floor(musica.duration));
+
+
+//eventos
+
+        document.querySelector('.anterior').addEventListener('click', () =>{
+           indexMuscia--;
+        if (indexMuscia < 0){
+               indexMuscia = 2; 
+            }
+            botaoPause.style.display = 'none';
+            botaoPlay.style.display = 'block';
+           renderizarMusica(indexMuscia);
+            
+    });
+        document.querySelector('.proxima').addEventListener('click', () =>{
+            indexMuscia++;
+            if (indexMuscia > 2){
+                indexMuscia = 0;
+            }
+            botaoPause.style.display = 'none';
+            botaoPlay.style.display = 'block';
+            renderizarMusica(indexMuscia);
+        });
+
+
+        
+        document.querySelector('.botao-play').addEventListener('click', tocarMusica);
+        document.querySelector('.botao-pause').addEventListener('click', pausarMusica);
+
+        musica.addEventListener('timeupdate', atualizarBarra);
+//functions
+        function renderizarMusica(index){
+            musica.setAttribute('src', musicas[index].src);
+            musica.addEventListener('loadeddata', ()=>{
+                nomeMusica.textContent = musicas[index].titulo;
+                nomeArtista.textContent = musicas[index].artista;
+                imagem.src = musicas[index].img;
+                duracaoMusica.textContent = segundosParaMinutos(Math.floor(musica.duration));
+            });
+        }
+
+
+        function tocarMusica(){
+            musica.play();
+            botaoPause.style.display = 'block';
+            botaoPlay.style.display = 'none';
+            inputCheck.checked = true;
+            
+        }
+
+        function pausarMusica(){
+            musica.pause();
+            botaoPause.style.display = 'none';
+            botaoPlay.style.display = 'block';
+            inputCheck.checked = false;
+        }
+
+        function atualizarBarra(){
+            let barra = document.querySelector('progress');
+            barra.style.width = Math.floor((musica.currentTime / musica.duration) * 100) + '%';
+            let tempoDecorrido = document.querySelector('#inicio');
+            tempoDecorrido.textContent = segundosParaMinutos(Math.floor(musica.currentTime));
+        }
+
+        function segundosParaMinutos(segundos){
+            let campoMinutos = Math.floor(segundos / 60);
+            let campoSegundos = segundos % 60;
+            if ( campoSegundos < 10 ){
+                campoSegundos = '0' + campoSegundos;
+            }
+
+            return campoMinutos + ':' + campoSegundos;
+        }
 
 
 

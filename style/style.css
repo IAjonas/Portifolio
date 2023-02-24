@@ -196,7 +196,7 @@
 .fundo  #chec{
    
     position: absolute;
-    display: flex;
+    display:none;
     transition: transform 2s;
     
     z-index: 1;
