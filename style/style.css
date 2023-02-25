@@ -1,11 +1,16 @@
 @font-face {
     font-family:'tech' ;
-    src: url('fonts/Tech.ttf') format(truetype), url('fonts/Tech.otf') format('opentype');
+    src: url('fonts/Tech.ttf.ttf') format(truetype), url('fonts/Tech.otf.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}@font-face {
+    font-family:'dogica' ;
+    src: url('fonts/dogica/TTF/dogicapixel.ttf') format(truetype), url('fonts/dogica/OTF/dogicapixel.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
+
 *{
-    font-family:'tech' ;
     background-color: var(--cor-fundo);
     color: white;
     padding: 0px;
@@ -418,7 +423,7 @@
     background-color: var(--cor-menu);
 }
 #walkman1{
-    background-color: blue;
+   
     left: 55px;
     bottom: -76px;
     position: absolute;
@@ -427,6 +432,7 @@
     height: 200px;
 }
 #caixa-walkman{
+    background-color: #8073735e;
     margin: 0;
     padding: 0;
     display: flex;
@@ -436,29 +442,50 @@
     width: 300px;
     height: 100%;
 }
+#displayWalkman{
+    background-color: #bb3535c7;
+    width: 221px;
+    height: 152px;
+    border-radius: 19px;
+    display: flex;
+    flex-direction: column;
+}
 
 
 #walkman1 #mestre{
     margin-top: 5px;
     display: flex;
     height: 65px;
+    width: 83px;
+    margin-inline: auto;
+    border-radius: 5px;
     
    
 }#Descrição{
-    height: 65px;
-    font-size: 12px;
+    
+    height: 50px;
+    font-size: 10px;
     display: flex;
     background-color: transparent;
     align-items: center;
     flex-direction: column-reverse;
+   
 }
-#Descrição h2, i{
+#Descrição h2, i{ 
+
+    color: black;
+    font-family: dogica;
+    background-color: transparent;
+    font-size: 10px;
     margin: 5px 0px 5px;    
 }
 #duração{
-    
     display: flex;
     align-items: center;
+    width: 188px;
+    
+    margin-top: 12px;
+    margin-inline: auto;
 
 }
 #barra{    
@@ -484,15 +511,19 @@ progress{
     background-color: white;
     margin-left: -10px;
 }
-#tempo{
+#tempo{   
     font-size: 11px;
     position: absolute;
-    width: 225px;
+    width: 190px;
     display: flex;
     justify-content: SPACE-BETWEEN;
-    top: 136px;
+    top: 112px;
     background-color: transparent;
-    
+}
+#tempo p{
+    font-family: dogica;
+    font-size: 8px;
+    background-color: transparent;
 }
 #dandomusica .botao-play, .botao-pause{
     cursor: pointer;
@@ -509,17 +540,44 @@ progress{
     height: 22px;
 }
 #dandomusica{
-
+   
     margin-top: 5px;
-    width: 150px;
+    width: 210px;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 32px;
+    height: 29px;
     position: absolute;
-    left: 78px;
+    border-radius: 8px;
     top: 154px;
-    background-color: rgba(124, 124, 124, 0.644);
+    background-color: rgba(187, 53, 53, 0.808);
+
+}
+#dandomusica .fas{
+    background-color: rgba(252, 252, 255, 0.521);
+    border-radius: 3px;
+    width: 23px;
+}
+#somesquerdo{
+    border-radius: 15px;
+    height: 193px;
+    width: 35px;
+    right: 3px;
+    top: 3px;
+    background-color: rgba(252, 252, 255, 0.521);
+    position: absolute;
+}
+
+#somdireito{
+    border-radius: 15px;
+    height: 193px;
+    width: 35px;
+    left: 3px;
+    top: 3px;
+    background-color: rgba(252, 252, 255, 0.521);
+    
+    position: absolute;
+    
 }
 
 #radio #lista #ajudali
@@ -539,12 +597,12 @@ progress{
     
 
 }#radio #lista #ajuda:hover{
-    translate: 8px;
+    
     transform: scale(1.1);
     transition: 1s;
 }
 #radio #lista #walkman:hover{
-    translate: 8px;
+    
     transform: scale(1.1);
     transition: 1s;
 }
@@ -588,3 +646,11 @@ progress{
     border-color: white 5px;
 }
 
+.fade-in {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .fade-in.active {
+    opacity: 1;
+  }

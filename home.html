@@ -113,6 +113,9 @@
                    <img id="walkman" src="img/play walkman.png" alt="walkman">
                         <div id="walkman1">
                             <div id="caixa-walkman">
+                                <div id="somesquerdo"></div>
+                                <div id="somdireito"></div>
+                                <div id="displayWalkman">
                                 <img id="mestre" src="img/Ludwig-van-Beethoven.jpg" alt="TheMestre">
                                 <div id="Descrição">
                                     <h2>nome da musica</h2>
@@ -129,11 +132,12 @@
                                         <p id="fim">20:40</p>
                                     </div>
                                 </div>
+                            </div>
                                 <div id="dandomusica">
-                                    <img class="fas fa-step-backward setas anterior" src="img/seta-pequena-esquerda.svg" alt="">
+                                    <img class="fas fa-step-backward setas anterior" src="img/seta-pequena-esquerda.png" alt="">
                                     <img class="fas fa-play-white botao-play" src="img/play.png" alt="">
                                     <img class="fas fa-pause-white botao-pause" src="img/pausa.svg" alt="">
-                                    <img class="fas fa-step-forward setas proxima" src="img/seta-pequena-direita.svg" alt="">
+                                    <img class="fas fa-step-forward setas proxima" src="img/seta-pequena-direita.png" alt="">
 
                                 </div>
                                 <audio id="audio1" src="audios/Beethoven - Moonlight Sonata (FULL) (128 kbps).mp3"></audio>
@@ -265,7 +269,9 @@
             musica.play();
             botaoPause.style.display = 'block';
             botaoPlay.style.display = 'none';
+
             inputCheck.checked = true;
+            
             
         }
 
@@ -273,7 +279,15 @@
             musica.pause();
             botaoPause.style.display = 'none';
             botaoPlay.style.display = 'block';
+
+
             inputCheck.checked = false;
+            botaoPause.classList.remove('active');
+            botaoPlay.classList.add('fade-in', 'active');
+
+
+
+
         }
 
         function atualizarBarra(){
