@@ -101,17 +101,38 @@
 }
 #ilumina{
     display: flex;
-    background: rgb(253, 253, 253);
-    width: 150px;
-    height: 56px;
+    justify-content: center;
+    align-items: center;
     position: absolute;
-    border-radius: 25px;
-    right: 17px;
+    width: 50px;
+    height: 54px;
+      
+    background: rgb(253, 253, 253);
+    
+   
+    border-radius: 90%;
+    box-shadow: -5px 1px 13px 7px black;
+   
     bottom: 2%;
+    right: 150px;
+}
+#arrasta{
+    width: 50px;
+    height: 54px;
+    
+    box-shadow: 0px 0px 14px 1px black;
+    background: blue;
+    border-radius: 20px;
+}
+
+#bola #arrasta:hover {
+        width: 100px;
+        height: 45px; 
 }
 #bola{ 
+   
     width: 50px;
-    margin-top: 1px;
+    margin-top: -3px;
     background: #eb1313;
     border-radius: 90%;
     height: 54px;

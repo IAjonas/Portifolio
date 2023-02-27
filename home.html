@@ -78,8 +78,10 @@
     </div>
 
     <div id="ilumina">
-        <div id="bola">
+        <div id="arrasta">
+            <div id="bola">
             
+            </div>
         </div>
     </div>
 
@@ -159,15 +161,15 @@
         const list = document.getElementById("menu-interativo");
 
 
-    tocarBola.style.marginLeft = "10px";    
+    tocarBola.style.marginLeft = "-4px";    
     list.style.display = "none";
 
 
     tocarBola.addEventListener("click",(event)=>{
-        if (tocarBola.style.marginLeft == "10px"){ 
+        if (tocarBola.style.marginLeft == "-4px"){ 
             tocarBola.style.marginLeft = "90px";
         } else { 
-            tocarBola.style.marginLeft = "10px";}
+            tocarBola.style.marginLeft = "-4px";}
             
         });
 
