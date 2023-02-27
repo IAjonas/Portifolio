@@ -98,7 +98,7 @@
     display: flex;
     position: relative;
     background-color: transparent;
-}
+}/* parei aqui ontem */
 #ilumina{
     display: flex;
     justify-content: center;
@@ -141,7 +141,7 @@
     
 }
 
-
+/*tentando adicionar um efeito hover no botao de iluminação */
 
 .fundo
 {       left: 514px;
