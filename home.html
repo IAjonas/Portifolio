@@ -16,8 +16,9 @@
 
     <div class="conteudo">
     <span class="txt">
-        <h1> Hi, I'm Jonas.</h1>
-        <h4>Estudante de Analise e Desenvolvimento de Sistemas</h4>
+        <h1> Olá, bem vindo</h1>
+        <h4>Me chamo jonas <br> e sou <br> 
+            Estudante <br> de <br> Analise e Desenvolvimento de Sistemas</h4>
     </span>
         <ul class="botão">
            <li>
@@ -50,28 +51,16 @@
        
         <label for="chec" class="label" id="eu-foto" >
             <section class="player">            
-                <img id="eu-foto" src="img/eu vermelho.jpg" alt="eu-bob">
+                <img id="eu-foto" src="img/eu vermelho.png" alt="eu-bob">
             
             
             </section>
        </label>
     </div>
 
-
-    <DIV class="menu">
-        <ul>
-            <div class="indicador1"></div>
-            <div class="indicador2"></div>
-        </ul>   
-    </DIV>
     <div class="nav-bar">
         <ul>
-            <li class="list" >
-                <a href="file:///C:/Users/Admin/Desktop/projet/Portifolio/ilumina%C3%A7%C3%A3o/ilumina%C3%A7%C3%A3o.html">
-                    <span class="icon"><img  src="img/luz.png"  title="iluminação">
-                </a></span>
-                
-            </li>
+           
             <li class="list" >
                 <a href="#">
                     <span class="icon"><img  src="img/fale comigo.png"  title="fale comigo">
@@ -86,6 +75,12 @@
             </li>
         </ul>
 
+    </div>
+
+    <div id="ilumina">
+        <div id="bola">
+            
+        </div>
     </div>
 
 
@@ -157,12 +152,24 @@
     </div>
     <script>
 //script do menu interativo 
+
+        const tocarBola = document.getElementById('bola');
+
         const button = document.getElementById("botao");
         const list = document.getElementById("menu-interativo");
 
 
-
+    tocarBola.style.marginLeft = "10px";    
     list.style.display = "none";
+
+
+    tocarBola.addEventListener("click",(event)=>{
+        if (tocarBola.style.marginLeft == "10px"){ 
+            tocarBola.style.marginLeft = "90px";
+        } else { 
+            tocarBola.style.marginLeft = "10px";}
+            
+        });
 
     button.addEventListener("click",(event)=>{
         if (list.style.display == "none"){
@@ -216,7 +223,7 @@
 
         
 
-
+       
 
         renderizarMusica(indexMuscia);
 
@@ -247,13 +254,17 @@
             renderizarMusica(indexMuscia);
         });
 
-
         
+
         document.querySelector('.botao-play').addEventListener('click', tocarMusica);
         document.querySelector('.botao-pause').addEventListener('click', pausarMusica);
 
         musica.addEventListener('timeupdate', atualizarBarra);
 //functions
+        
+
+
+
         function renderizarMusica(index){
             musica.setAttribute('src', musicas[index].src);
             musica.addEventListener('loadeddata', ()=>{
