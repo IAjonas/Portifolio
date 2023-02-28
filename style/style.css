@@ -30,8 +30,9 @@
     
  }
 :root{
-    --cor-fundo: #141616;
-    --cor-menu: rgb(245 184 0);
+    --cor-text: white;
+    --cor-fundo: #000000;
+    --cor-menu: #f5b800;
     --cor-transparente:none;
  }
 
@@ -63,7 +64,7 @@
     display: flex;
     list-style: none;
     border-radius: 20px;
-    background-color: #f5b800;;
+    background-color: var(--cor-menu);
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -72,7 +73,7 @@
     position: relative;
     display: flex; 
     list-style: none;     
-    background-color: #f5b800;;
+    background-color: var(--cor-menu);
     
 
 }
@@ -144,107 +145,77 @@
 /*tentando adicionar um efeito hover no botao de iluminação */
 
 .fundo
-{       left: 514px;
-    top: 61px;
-    width: 873px;
-    position: relative;
-    display: flex;
-    height: 779px;
-    border-radius: 100%;
-    background-color: rgba(0, 0, 0, 0.300);
-    background-size: cover;
-    box-shadow: 0px 0px 2px 80px rgb(8 8 8 / 56%);
-    border: solid 1px rgba(255, 255, 255, 0.380);
-    justify-content: center;
+{    display: flex;
     align-items: center;
-
+    justify-content: flex-end;
+    height: 97vh;
     
-}label{
-    display: flex;
-    position: absolute;
-
-    
-    
-    background-color: transparent;
-    background-size: cover;
-    justify-content:center;
-    align-items: center;
-
 }
 
 .fundo .player{
-    margin: auto;
-    position: absolute;
-    width: 650px;
-    height: 650px;
-    background-color: transparent;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 100vh;
 }
 .fundo .player #eu-foto{
-    margin: auto;
-    display: flex;
-    position: absolute;
-    background-color: transparent;
-    background-size: cover;
-    width: 576px;
-    height: 655px;
-    border-radius: 50%;
-    justify-content: center;
-    align-items: center;
-}
-
-
-@keyframes rotate{
-    from {transform: rotateZ(0deg);}
-    to {transform: rotateZ(360deg);}
-
-}
-.fundo  #chec{
-   
-    position: absolute;
-    display:none;
-    transition: transform 2s;
-    
+    height: 100vh;
     z-index: 1;
-    
-}
-.fundo #chec:checked + #eu-foto{
-    
-    animation: rotate 4s linear infinite;
-}
-.tocador{
-
-    width: 100px;
-    height: 100px;
-    background-color: rgb(245 184 0 / 36%);
-    display: flex;
+    height: 656px;
     position: absolute;
-    margin: auto;
+    width: 513px;
+    right: 328px;
+    /* border: solid 16px yellow; */
+    top: 185px;
+}
+#borda{
+    position: absolute;
+    width: 482px;
+    z-index: 2;
+    background: transparent;
+    border: solid 30px  var(--cor-menu);;
+    height: 604px;
+    right: 310px;
+    top: 181px;
+
+}
+#borda2{
     z-index: 1;
-    border-radius: 100%;
-    top: 0px;
-    left: 0px;
-    bottom: 0px;
-    right: 0;
-
-}
- .tocador .black{
-   
-    width: 40px;
-    height: 40px;
-    background-color: rgb(0 0 0);
+    background: transparent;
     position: absolute;
-    margin: auto;
-    border-radius: 100%;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    width: 432px;
+    border: solid 61px  var(--cor-menu);;
+    height: 556px;
+    right: 208px;
+    top: 80px;
+}
+#borda3{
+    z-index: 1;
+    /* background: transparent; */
+    position: absolute;
+    width: 432px;
+    border: solid 9px  var(--cor-menu);;
+    height: 556px;
+    right: 474px;
+    top: 341px
+}
+#bordaescura1{
+    position: absolute;
+    right: 267px;
+    height: 727px;
+    z-index: 1;
+    width: 589px;
+    background: #000000;
+    top: 139px;
 
 }
+#bordaescura2{
+    position: absolute;
+    right: 326px;
+    height: 727px;
+    z-index: 1;
+    width: 589px;
+    background: #000000;
+    top: 179px;
+}
+
 .conteudo{
     position: absolute;
     z-index: 1;
@@ -317,7 +288,7 @@
     width: 240px;
     height: 50px;
     margin-inline: 15px;
-    background-color: rgb(245 184 0);
+    background-color:  var(--cor-menu);
     cursor: pointer;
     display: flex;
     justify-content: center;
