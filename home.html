@@ -78,11 +78,14 @@
     </div>
 
     <div id="ilumina">
-        <div id="arrasta">
-            <div id="bola">
-            
+        <div id="toggle-wrapper">
+            <label>
+                <input type="checkbox" class="toggle-input">
+            <div id="slider">
+                <button id="bola"></button>
             </div>
         </div>
+    </label>
     </div>
 
 
@@ -155,24 +158,14 @@
     <script>
 //script do menu interativo 
 
-        const tocarBola = document.getElementById('bola');
+        
 
         const button = document.getElementById("botao");
         const list = document.getElementById("menu-interativo");
 
 
-    tocarBola.style.marginLeft = "3px";    
+       
     list.style.display = "none";
-
-
-    tocarBola.addEventListener("click",(event)=>{
-        if (tocarBola.style.marginLeft == "3px"){ 
-            tocarBola.style.marginLeft = "66px";
-        } else { 
-            tocarBola.style.marginLeft = "3px";}
-            
-        });
-
     button.addEventListener("click",(event)=>{
         if (list.style.display == "none"){
             list.style.display = "block";
@@ -321,7 +314,17 @@
         }
 
 
-
+        const toggleInput = document.querySelector('.toggle-input');
+        toggleInput.addEventListener('change', function() {
+        const root = document.documentElement;
+        if (this.checked) {
+        root.style.setProperty('--cor-menu', 'rgb(212, 200, 200)');
+        root.style.setProperty('--cor-fundo', 'rgb(212, 200, 200)');
+        } else {
+            root.style.setProperty('--cor-fundo', '#000000');
+            root.style.setProperty('--cor-menu', '#f5b800');
+        }
+        });
 
 
 

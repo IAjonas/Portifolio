@@ -12,6 +12,7 @@
     color: white;
     padding: 0px;
     font-weight: normal;
+    margin: 0;
     
 
  }
@@ -29,11 +30,15 @@
     
     
  }
-:root{
+:root{ 
+
+    --cor-menu: #f5b800;
     --cor-text: white;
     --cor-fundo: #000000;
-    --cor-menu: #f5b800;
     --cor-transparente:none;
+ }
+ :root{
+    --cor-menu-white: rgb(212, 200, 200);
  }
 
 .icon img{
@@ -101,39 +106,53 @@
     background-color: transparent;
 }/* parei aqui ontem */
 #ilumina{
+    
     display: flex;
     justify-content: flex-end;
     align-items: center;
     position: absolute;
     width: 96px;
     height: 34px;
-    background: rgb(253, 253, 253);
+    background: none;
     /* border-radius: 90%; */
-    box-shadow: -5px 1px 13px 7px black;
+    /* */
     bottom: 2%;
     right: 26px;
 }
-#arrasta{
-   
-    width: 100vh;
-    height: 25px;
-    box-shadow: 0px 0px 14px 1px black;
-    background: blue;
+#slider{
+    position: relative;
+    background: rgb(255, 255, 255);
+    width: 94px;
+    height: 34px;
+    border: 2px solid #bbb;
     border-radius: 20px;
+    cursor: pointer;
+    box-shadow: -3px 1px 14px 0px black;
     
-}
-#bola{ 
-    width: 28px;
-    /* margin-top: 3px; */
-    margin-left: 3px;
-    background: #eb1313;
-    border-radius: 90%;
-    border-radius: 90%;
-    height: 28px;
-    transition: 1s ease-in;
-    
-}
 
+}
+#bola{
+    position: absolute;
+    background-color: var(--cor-menu);
+    border: none;
+    width: 29px;
+    height: 31px;
+    left: 3px;
+    top: 2px;
+    border-radius: 50%;
+    pointer-events: none;
+    transition: all 300ms ease-in-out;
+
+}.toggle-input:checked ~#slider{
+    background: #f5b800;
+}
+.toggle-input:checked ~#slider > #bola{
+    left: 62px;
+    background-color:white;
+}
+.toggle-input{
+    display: none;
+}
 /*tentando adicionar um efeito hover no botao de iluminação */
 
 .fundo
@@ -371,7 +390,7 @@
 }
 #lista{
     
-
+    margin: 21px;
     flex-wrap: wrap;
     list-style: none;
 
