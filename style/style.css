@@ -102,42 +102,34 @@
 }/* parei aqui ontem */
 #ilumina{
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     position: absolute;
-    width: 50px;
-    height: 54px;
-      
+    width: 96px;
+    height: 34px;
     background: rgb(253, 253, 253);
-    
-   
-    border-radius: 90%;
+    /* border-radius: 90%; */
     box-shadow: -5px 1px 13px 7px black;
-   
     bottom: 2%;
-    right: 150px;
+    right: 26px;
 }
 #arrasta{
-    width: 50px;
-    height: 54px;
-    
+   
+    width: 100vh;
+    height: 25px;
     box-shadow: 0px 0px 14px 1px black;
     background: blue;
     border-radius: 20px;
-}
-
-#bola #arrasta:hover {
-        width: 100px;
-        height: 45px; 
+    
 }
 #bola{ 
-   
-    width: 50px;
-    margin-top: -3px;
+    width: 28px;
+    /* margin-top: 3px; */
+    margin-left: 3px;
     background: #eb1313;
     border-radius: 90%;
-    height: 54px;
-    cursor: pointer;
+    border-radius: 90%;
+    height: 28px;
     transition: 1s ease-in;
     
 }
@@ -215,12 +207,21 @@
     background: #000000;
     top: 179px;
 }
+#detalhe{
+    position: absolute;
+    right: 761px;
+    top: 80px;
+    width: 1162px;
+    height: 59px;
+    background-color: var(--cor-menu);
+
+}
 
 .conteudo{
     position: absolute;
     z-index: 1;
     display: flex;
-    background-color: #21212385;
+    background-color: #21212349;
     width: 104vh;
     height: 100vh;
     top: 0px;
