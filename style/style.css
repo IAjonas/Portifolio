@@ -417,7 +417,8 @@
 }
 
 #radio{
-    position: absolute;
+
+    position: fixed;
     display: flex;
     z-index: 1;
     background-color: transparent ;
@@ -452,13 +453,29 @@
 }
 #botao img{
     cursor: pointer;
-    
     transition: 5s;
     display: flex;
     width: 50px;
     background-color: transparent;
 
 }
+#luzLampada{
+    height: 38px;
+    width: 35px;
+    top: -5px;
+    border-radius: 50%;
+    left: 8px;
+    position: absolute;
+    /* box-shadow: 1px 1px 20px 20px #f5b80025; */
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 1s;
+}
+#luzLampada:hover{
+    box-shadow: 1px 1px 20px 20px #f5b80025;
+    background-color: #f5b80028;
+}
+
 #botao img:checked{
     animation: rotate 1s linear infinite;
 }
