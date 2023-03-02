@@ -51,7 +51,7 @@
     --cor-menu-white: rgb(212, 200, 200);
  }
 
-.icon img{
+#icon img{
     z-index: 1;
     /* position: relative; */
     position: absolute;
@@ -61,7 +61,9 @@
     height: 171px;
     background-color: transparent;
 }
-
+#icon{
+    cursor: pointer;
+}
 .nav-bar
 {    width: 54px;
     height: 116px;
@@ -75,12 +77,15 @@
     animation: float 8s ease-in-out infinite;
     justify-content: center;
     transition: background-color ;
+    background-color: transparent;
+   
+    
 }
 
 
 .list {
    
-    
+    background-color: transparent;
     list-style: none;     
     
     
@@ -94,6 +99,7 @@
     /* align-items: center; */
     /* justify-content: center; */
     /* display: flex; */
+
     background-color: red;
     /* border-radius: 60%; */
     
@@ -103,58 +109,16 @@
     background-color: rgba(140, 2, 253, 0.281);
     
 }
-.nav-bar a{
-    background-color: transparent;
-}
-#ilumina{
-    
+#menucell{
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    position: absolute;
-    width: 96px;
-    height: 34px;
-    background: none;
-   
-    bottom: 2%;
-    right: 26px;
-}
-#slider{
-    position: relative;
-    background: rgb(255, 255, 255);
-    width: 94px;
-    height: 34px;
-    border: 2px solid #bbb;
-    border-radius: 20px;
-    cursor: pointer;
-    box-shadow: -3px 1px 14px 0px black;
+    width: 60px;
+    height: 84px;
     
-
+    margin-top: 9px;
+    background-color: red;
+    justify-content: center;
+    align-items: center;
 }
-#bola{
-    position: absolute;
-    background-color: var(--cor-menu);
-    border: none;
-    width: 29px;
-    height: 31px;
-    left: 3px;
-    top: 2px;
-    border-radius: 50%;
-    pointer-events: none;
-    transition: all 300ms ease-in-out;
-
-}.toggle-input:checked ~#slider{
-    background: #f5b800;
-}
-.toggle-input:checked ~#slider > #bola{
-    left: 62px;
-    background-color:white;
-}
-.toggle-input{
-    display: none;
-}
-
-
 .fundo
 
 {   
@@ -175,9 +139,6 @@
     
 }
 
-.fundo .player{
-    
-}
 #eu-foto{
     /* z-index: 1; */
     background-color: transparent;
@@ -216,17 +177,16 @@
     width: 62px;
     box-shadow: -1px 6px 16px 10px #f5b80007;
     background-color: #f5b80007;
-    /* background-color: transparent; */
     top: 61px;
 }
 #bordaescura2{
     position: absolute;
-    right: 562px;
-    height: 335px;
+    right: 413px;
+    height: 549px;
     z-index: 1;
     border-radius: 45%;
     box-shadow: 0px -1px 20px 17px #f5000006;
-    width: 226px;
+    width: 463px;
     background-color: #f5000006;
     top: 227px;
     z-index: 2;
@@ -260,7 +220,7 @@
     width: 534px;
     right: 408px;
     top: 214px;
-    animation: neon1 1.5s ease-in infinite ;
+    animation: neon1 5.5s ease-in infinite ;
     background: var(--cor-transparente);
 }
     #imagemneon {
@@ -272,6 +232,9 @@
     margin-left: 68px;
     
 }
+#imagemneon img{
+    background-color: transparent;
+}
 @keyframes neon1{
     from {
         background: var(--cor-transparente);
@@ -280,6 +243,7 @@
         background: radial-gradient(circle, rgb(232 20 213 / 18%) 0%, rgb(176 84 27 / 8%) 40%, rgb(210 22 32 / 1%) 53%, rgb(232 101 20 / 1%) 100%);
     }
 }
+
 #imagemneon img .fogo{
     position: absolute;
     background-color: transparent;
@@ -306,6 +270,195 @@
 
     
 }
+#bordadevidro{
+    border-radius: 18px;
+    background-color: #fd62620d;
+    backdrop-filter: blur(3px);
+    width: 477px;
+    height: 267px;
+}
+#neonborda{
+    display: flex;
+    position: absolute;
+    width: 457px;
+    height: 248px;
+    background-color: transparent;
+    border-radius: 16px;
+    border: 4px solid #ffffff;
+    box-shadow: 0px 0px 14px 1px white;
+}
+#esquerdac{
+    margin-top: 2px;
+    margin-left: 3px;
+    position: relative;
+    box-shadow: -1px -1px 11px 1px orange;
+    width: 71px;
+    border: solid 4px orange;
+    height: 235px;
+    background-color: transparent;
+    border-radius: 9px;
+}
+#direitac{
+    margin-top: 2px;
+    margin-left: 293px;
+    position: relative;
+    box-shadow: -1px -1px 11px 1px orange;
+    width: 71px;
+    border: solid 4px orange;
+    height: 235px;
+    background-color: transparent;
+    border-radius: 9px;
+}
+#txtneon{
+
+    top: 3px;
+    position: absolute;
+    box-shadow: -1px -1px 11px 1px orange;
+    width: 281px;
+    border: solid 4px orange;
+    height: 235px;
+    background-color: transparent;
+    border-radius: 9px;
+    left: 84px;
+}
+#triangneon{
+    cursor: pointer;
+    position: absolute;
+    width: 0;
+    height: 0; 
+    margin-left: 10px;
+    margin-top: 25px;
+    top: -7px;
+    border-left: 27px solid transparent;
+    border-right: 26px solid transparent;
+    border-bottom: 53px solid transparent;
+    animation: neon2 3s alternate ease-in infinite ;
+    background-color: transparent;
+}
+#trianguloj{
+    position: absolute;
+    left: -35px;
+    top: -3px;
+    width: 69px;
+    height: 67px;
+    
+    backdrop-filter: blur(5px);
+    background-color: transparent;
+
+}
+#bolaneon{
+    
+    cursor: pointer;
+    position: absolute;
+    background-color: transparent;
+    top: 147px;
+    left: 11px;
+    width: 48px;
+    border-radius: 132px;
+    height: 47px;
+    animation: neon2 1s alternate ease-in infinite ;
+}
+#bolaj{
+    
+       width: 69px;
+       height: 67px;
+       left: -9px;
+       top: -11px;
+       backdrop-filter: blur(5px);
+       background-color: transparent;
+       position: absolute;
+}
+#xisneon{
+    cursor: pointer;
+    position: absolute;
+    background-color: transparent;
+    top: 23px;
+    left: 8px;
+    width: 55px;
+    border-radius: 11px;
+    animation: neon2 1s alternate ease-in infinite ;
+    height: 49px;
+}
+
+#xisj{
+   
+    width: 71px;
+    height: 74px;
+    left: -8px;
+    top: -18px;
+    backdrop-filter: blur(5px);
+    background-color: transparent;
+    position: absolute;
+}
+#quadradoneon{
+    cursor: pointer;
+    position: absolute;
+    background-color: transparent;
+    top: 146px;
+    left: 7px;
+    width: 58px;
+    border-radius: 6px;
+    height: 52px;
+    animation: neon2 2s alternate ease-in infinite ;
+}
+
+@keyframes neon2{
+    from {
+        background-color: transparent;
+    }
+    to {
+        background-color: #ff000047;    
+    }
+}
+
+#quadradoj{
+    background-color: transparent;
+    width: 59px;
+    height: 53px;
+    left: 1px;
+    top: 3px;
+    backdrop-filter: blur(5px);
+    position: absolute;
+}#meioc img{
+    margin-top: -47px;
+    margin-left: -99px;
+    width: 491px;
+    height: 347px;
+    background-color: transparent;
+}
+#meioc{
+    position: absolute;
+    height: 246px;
+    width: 290px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    left: 83px;
+}
+#txtneondesligado{
+    display: block;
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    background-color: transparent;
+}
+#txtneonligado{
+    
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    background-color: transparent;
+    animation: liga 1s alternate ease-in infinite;
+}
+@keyframes liga{
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }}
+
 .conteudo .txt{
     
     width: 100%;
@@ -318,51 +471,21 @@
     
 }
 /*marcando*/
-.conteudo .txt h1{
-    font-family:'TrashHand' ;
-    background-color: transparent;        
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    font-size: 150px;
-    margin-bottom: 5px;
-
-}.conteudo .txt h2{
-    font-family:'TrashHand' ;
-    background-color: transparent;        
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    font-size: 110px;
-    margin-bottom: 5px;
-    margin-inline: 8px;
-
-}
-.conteudo .txt i{
-    font-size: 100px;
-    display: flex;
-    color: white;
-    font-family: 'TrashHand';
-    align-items: center;
-    font-style: italic;
-}
 .conteudo .txt2{
-    background-image: url(/img/bem\ vindo\ neon.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     animation: floate 4s ease-in-out infinite;
-    /* background-color: transparent; */
     box-shadow: 1px 1px 20px 20px #f5b80007;
     background-color: #f5b80007;
     display: flex;
-    width: 483px;
-    height: 277px;
-    border-radius: 39px;
-    margin-left: 222px;
-    justify-content: center;
+    border-radius: 151px;
+    width: 572px;
+    height: 313px;
+    margin-left: 221px;
     align-items: center;
+    justify-content: center;
 }
 @keyframes floate{
     0% {
@@ -490,7 +613,6 @@
     border-radius: 50%;
     left: 8px;
     position: absolute;
-    /* box-shadow: 1px 1px 20px 20px #f5b80025; */
     background-color: transparent;
     cursor: pointer;
     transition: all 1s;
@@ -498,10 +620,6 @@
 #luzLampada:hover{
     box-shadow: 1px 1px 20px 20px #f5b80025;
     background-color: #f5b80028;
-}
-
-#botao img:checked{
-    animation: rotate 1s linear infinite;
 }
 #menu-interativo{
     position: absolute;    
@@ -794,17 +912,13 @@ progress{
     background: transparent;
   }
   #fundo2{
-    background-image: url(/img/fundoceuimg.jpg);
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    
+    display: flex;
     padding-top: 336px;
     padding-bottom: 311px;
-    background-color: transparent;
+    background-color: rgb(247, 202, 1);
     color: yellow;
   }
+
   #row{
     background-color: transparent;
     display: flex;
@@ -828,7 +942,7 @@ progress{
 
     background-color: transparent;
   }#fundo3{
-    background-image: url(/img/estrelas\ do\ fundo\ 3.jpg);
+    background-image: url(/img/fundo\ 3\ test.jpg);
     background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;
