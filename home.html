@@ -7,6 +7,11 @@
     <title>Portifolio</title>
 
     <link rel="stylesheet" href="style/style.css">
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     
 </head>
 <body>   
@@ -101,47 +106,30 @@
                 <img id="fundodogame" src="img/arcade 99.png" alt="">
                     <section id="content-site">
             
-            <div id="row">
-                <div id="coluna1">
-                    <h1 class="text-center">MENU DE PROJETOS 
-                    <h1>
-                    <p class="text-center">
-                        AQUI VAI O MENU DE PROJETOS COM A FUNCTION DE ROTAÇÃO DE IMAGEM 
-                        STILO FLIP
-                    </p>
-
-                </div>
-
-            </div>
-            <div id="row">
-                <div id="col-sm-1">
-                    <div id="tumbnail">
-                        <img src="img/antenção em obras 1.webp" alt="">
-                        <div id="caption">
-                            <h3>OBRAS 1</h3>
-                            <P> TA TUDO EM OBRA</P>
-                        </div>
-                    </div>
-                </div>
-                <div id="col-sm-1">
-                    <div id="tumbnail">
-                        <img src="img/antenção em obras 2.webp" alt="">
-                        <div id="caption">
-                            <h3>OBRAS 2</h3>
-                            <P> TA TUDO EM OBRA</P>
-                        </div>
-                    </div>
-                </div>
-                <div id="col-sm-1">
-                    <div id="tumbnail">
-                        <img src="img/antenção em obras 3.webp" alt="">
-                        <div id="caption">
-                            <h3>OBRAS 3</h3>
-                            <P> TA TUDO EM OBRA</P>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                        <div class="carousel">
+                            <div class="slides">
+                              <div class="slide" id="img">
+                                <img src="img/celula sem.png" alt="Slide 1">
+                                <div class="caption">
+                                  <h3>OBRAS 1</h3>
+                                  <p> TA TUDO EM OBRA</p>
+                                </div>
+                              </div>
+                              <div class="slide">
+                                <img src="img/antenção em obras 2.webp" alt="Slide 2">
+                                <div class="caption">
+                                  <h3>OBRAS 2</h3>
+                                  <p> TA TUDO EM OBRA</p>
+                                </div>
+                              </div>
+                              <div class="slide">
+                                <img src="img/allegro.jpg" alt="Slide 3">
+                                <div class="caption">
+                                  <h3>OBRAS 3</h3>
+                                  <p> TA TUDO EM OBRA</p>
+                                </div>
+                              </div>
+                            </div>
 
                     </section>
             </section>
@@ -405,9 +393,10 @@
 
         musica.addEventListener('timeupdate', atualizarBarra);
 //functions
-        
 
 
+
+ 
 
         function renderizarMusica(index){
             musica.setAttribute('src', musicas[index].src);
@@ -491,4 +480,4 @@
         
     
 </body>
-</html>
+</html> 

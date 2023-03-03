@@ -947,10 +947,66 @@ progress{
     width: 242px;
     height: 271px;
   }
-  #caption, #coluna1, #tumbnail, #col-sm-1, h1,h3,p{
+  .carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    min-height: 100px;
+  }
+  .slides {
+    box-shadow: 2px 2px 4px black;
+    overflow: hidden;
+    height: 270px;
+    width: 242px;
+  }
+  .slide {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    transform: translateX(0);
+    
+  }
+  #img{
+    object-fit: cover;
+    height: 270px;
+    width: 260px;
+  }
+  .slide img {
+    width: 100%;
+    height: auto;
+    background-color: transparent;
+  }
+  .caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  /* #caption, #coluna1, #tumbnail, #col-sm-1, #col-sm-2, #col-sm-3, h1,h3,p{
 
     background-color: transparent;
-  }#fundo3{
+  }
+  .card {
+    width: 33.33%;
+    float: left;
+    text-align: center;
+    transition: all 0.5s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+.center {
+    width: 100%;
+    margin: 0 auto;
+} */
+  #fundo3{
     background-image: url(/img/fundo\ 3\ test.jpg);
     background-position: center top;
     background-repeat: no-repeat;
