@@ -911,12 +911,19 @@ progress{
     text-align: center;
     background: transparent;
   }
-  #fundo2{
-    display: flex;
-    padding-top: 336px;
-    padding-bottom: 311px;
-    background-color: rgb(247, 202, 1);
+  #fundo2{   
+     display: flex;
+    padding-top: 0px;
+    padding-bottom: 976px;
+    background-image: url(/img/fundo\ 3\ test.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
     color: yellow;
+  }
+  #fundodogame{
+    background-color: transparent;
   }
 
   #row{
@@ -927,6 +934,8 @@ progress{
     text-align: center;
   }
   #content-site{
+    margin-top: -653px;
+    /* position: absolute; */
     background-color: transparent;
     display: flex;
     justify-content: center;
@@ -935,8 +944,8 @@ progress{
   }
   #content-site img{
     background-color: transparent;
-    width: 371px;
-    height: 383px;
+    width: 242px;
+    height: 271px;
   }
   #caption, #coluna1, #tumbnail, #col-sm-1, h1,h3,p{
 
